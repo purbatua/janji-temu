@@ -1,7 +1,5 @@
 import { CalendarDays, Check, CreditCard, MoveRight, Shield, Star, Users } from "lucide-react"
 import { Metadata } from "next"
-import Link from "next/link"
-// import { Header1 } from "@/components/layout/header/header-1"
 import { Hero5 } from "@/components/blocks/hero/hero-5"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -25,40 +23,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* <Header1 /> */}
       {/* Hero Section */}
       <Hero5 />
-      {/* <section className="from-primary/5 to-background w-full bg-gradient-to-b py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center justify-center gap-8 text-center">
-            <Badge variant="secondary" className="px-4 py-1 text-sm">
-              <Star className="mr-1 h-3 w-3" /> Launching Soon in Indonesia
-            </Badge>
-
-            <h1 className="max-w-3xl text-4xl font-bold tracking-tight md:text-6xl">
-              Simplify Appointment Scheduling for Your <span className="text-primary">Indonesian Business</span>
-            </h1>
-
-            <p className="text-muted-foreground max-w-2xl text-lg md:text-xl">
-              Streamline your booking process, integrate with local payment gateways, and gain valuable insights about
-              your customers and services.
-            </p>
-
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Button size="lg" className="gap-2">
-                Get Started Free <MoveRight className="h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/dashboard">View Demo</Link>
-              </Button>
-            </div>
-
-            <div className="text-muted-foreground mt-4 flex items-center justify-center gap-2 text-sm">
-              <Shield className="h-4 w-4" /> No credit card required
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       {/* Features Section */}
       <section className="w-full py-20 lg:py-32">
