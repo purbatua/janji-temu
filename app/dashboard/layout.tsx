@@ -1,7 +1,7 @@
 import { cookies } from "next/headers"
 
 import { DashboardHeader } from "@/app/dashboard/components/dashboard-header"
-import { AppSidebar } from "@/components/app-sidebar"
+import { AppSidebar } from "@/app/dashboard/components/dashboard-sidebar"
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 
 import "./theme.css"

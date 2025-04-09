@@ -16,6 +16,7 @@ build
 # misc
 .DS_Store
 *.pem
+.temp
 
 # debug
 npm-debug.log*
@@ -24,6 +25,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -35,5 +37,5 @@ storybook-static/
 
 /.npm-only-allow
 
-# misc
-.temp
+# prisma
+# generated/prisma/

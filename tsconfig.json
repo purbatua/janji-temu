@@ -2,7 +2,8 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Next.js",
   "compilerOptions": {
-    "target": "es5",
+    // "target": "es5",
+    "target": "ES6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -21,10 +22,13 @@
     "paths": {
       "@/app/*": ["app/*"],
       "@/constant/*": ["constant/*"],
+      "@/context/*": ["context/*"],
       "@/components/*": ["components/*"],
+      "@/features/*": ["features/*"],
       "@/lib/*": ["lib/*"],
       "@/lib/utils/*": ["lib/utils/*"],
       "@/hooks/*": ["hooks/*"],
+      "@/generated/*": ["generated/*"],
       "@/public/*": ["public/*"],
       "@/styles/*": ["styles/*"]
     },
@@ -44,5 +48,5 @@
     ".next/types/**/*.ts",
     "eslint.config.mjs"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".temp"]
 }

@@ -1,31 +1,30 @@
 "use client"
 
-// import { GalleryVerticalEnd } from "lucide-react"
+
 import Image from "next/image"
 import Link from "next/link"
-// import { LoginForm } from "@/components/login-form"
 import { z } from 'zod'
 import LogoSVG from "@/components/svgs/logo"
-import { LoginForm } from "@/features/auth/login-form"
+import { RegistrationForm } from "@/features/auth/registration-form"
 import { useAppForm } from '@/hooks/use-form'
-import { signIn } from "@/lib/auth-client"
+import { signUp } from "@/lib/auth-client"
 import BookingAppImg from "@/public/images/booking-app-2.jpg"
-// import LogoIcon from "@/public/images/logo/logo.svg"
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const form = useAppForm({
     defaultValues: {
       email: '',
       password: '',
+      confirm_password: '',
     },
     onSubmit: async ({ value }) => {
       console.log("onSubmit Value: ", value);
       // alert(JSON.stringify(value, null, 2));
-      const { data, error } = await signIn.email({
+      const { data, error } = await signUp.email({
         email: value?.email,
         password: value?.password,
+        name: "",
         callbackURL: "/dashboard",
-        rememberMe: false
       }, {
         onRequest: (ctx) => {
           //show loading
@@ -33,13 +32,16 @@ export default function LoginPage() {
         },
         onSuccess: (ctx) => {
           //redirect to the dashboard or sign in page
-          console.log("Login success ctx", ctx);
+          console.log("Registration success ctx", ctx);
         },
         onError: (ctx) => {
           // display the error message
-          alert(ctx.error.message);
+          console.error(ctx.error.message);
         },
       })
+
+      // console.debug(data);
+      // console.error(error);
     },
     validators: {
       // onChange: (value) => {
@@ -48,6 +50,7 @@ export default function LoginPage() {
       onChange: z.object({
         email: z.string().email({ message: "Invalid email address" }),
         password: z.string().min(6),
+        confirm_password: z.string().min(6),
       })
     }
   })
@@ -97,7 +100,7 @@ export default function LoginPage() {
         </div>
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-xs">
-            <LoginForm form={form} title="Test Form" />
+            <RegistrationForm form={form} title="Test Form" />
           </div>
         </div>
       </div>
