@@ -7,6 +7,7 @@ import {
   Command,
   Frame,
   GalleryVerticalEnd,
+  Gauge,
   Map,
   PieChart,
   Settings2,
@@ -52,10 +53,17 @@ const data = {
   ],
   navMain: [
     {
+      title: "Dashboard",
+      url: "/dashboard",
+      icon: Gauge,
+      isActive: true,
+      items: [],
+    },
+    {
       title: "Pesanan",
       url: "#",
       icon: SquareTerminal,
-      isActive: true,
+      isActive: false,
       items: [
         {
           title: "Pesanan Saya",
@@ -75,7 +83,7 @@ const data = {
       title: "Penawaran",
       url: "#",
       icon: SquareTerminal,
-      isActive: true,
+      isActive: false,
       items: [
         {
           title: "Penawaran Saya",
