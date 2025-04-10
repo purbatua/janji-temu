@@ -40,6 +40,8 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "../drizzle";
 import * as schema from "../drizzle/schema";
 
+const CORS = (process.env.CORS_ALLOW_LIST || "").split(",") || [];
+
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
     provider: "pg",
@@ -49,8 +51,8 @@ export const auth = betterAuth({
     },
     //if all of them are just using plural form, you can just pass the option below
     usePlural: true,
-    
   }),
+  trustedOrigins: CORS,
   emailAndPassword: {  
     enabled: true,
     autoSignIn: true,
