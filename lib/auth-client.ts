@@ -3,7 +3,7 @@ import { toast } from "sonner";
 
 export const client = createAuthClient({
   /** the base url of the server (optional if you're using the same domain) */
-  baseURL: "http://localhost:3000",
+  // baseURL: "http://localhost:3000",
   fetchOptions: {
     onError(e) {
       if (e.error.status === 429) {
