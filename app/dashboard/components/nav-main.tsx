@@ -41,9 +41,9 @@ export function NavMain({
 
           if ((item.items || []).length === 0) {
             return (
-              <SidebarMenuItem className="cursor-pointer">
-                <SidebarMenuButton asChild tooltip={item.title} key={item.url}>
-                  <Link href={item.url}>
+              <SidebarMenuItem className="cursor-pointer" key={item.title}>
+                <SidebarMenuButton asChild tooltip={item.title}>
+                  <Link href={item.url} key={item.url}>
                     {item.icon && <item.icon />}
                     <span>{item.title}</span>
                   </Link>
