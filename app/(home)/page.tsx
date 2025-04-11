@@ -28,7 +28,7 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="w-full py-20 lg:py-32">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 flex flex-col w-full lg:w-8/12">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">Everything You Need to Manage Appointments</h2>
             <p className="text-muted-foreground mx-auto max-w-2xl">
@@ -73,7 +73,7 @@ export default function Home() {
 
       {/* Pricing Section */}
       <section className="bg-primary/5 w-full py-20 lg:py-32">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 flex flex-col w-full lg:w-8/12">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">Simple, Transparent Pricing</h2>
             <p className="text-muted-foreground mx-auto max-w-2xl">
@@ -124,7 +124,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="w-full py-20 lg:py-32">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 flex flex-col w-full lg:w-10/12">
           <div className="bg-primary text-primary-foreground rounded-xl p-8 md:p-12 lg:p-16">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="mb-4 text-3xl font-bold md:text-4xl">Ready to Transform Your Booking Experience?</h2>

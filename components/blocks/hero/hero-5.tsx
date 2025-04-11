@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 
 import { MoveRight, PhoneCall, Shield, Star } from "lucide-react"
+import Link from "next/link"
 import { useEffect, useMemo, useState } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -73,8 +74,10 @@ export const Hero5 = () => {
             <Button size="lg" className="gap-4" variant="outline">
               Jump on a call <PhoneCall className="h-4 w-4" />
             </Button>
-            <Button size="lg" className="gap-4">
-              Sign up here <MoveRight className="h-4 w-4" />
+            <Button size="lg" className="gap-4" asChild>
+              <Link href="/dashboard">
+                  Sign up here <MoveRight className="h-4 w-4" />
+              </Link>
             </Button>
           </div>
 
