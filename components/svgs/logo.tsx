@@ -5,7 +5,7 @@ type Props = {
 const Logo = ({ className = "" }: Props) => {
   return (
     <svg viewBox="0 0 132.292 132.292" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <g stroke="#053b50" fill="none">
+      <g stroke="currentColor" fill="none">
         <g transform="matrix(1.41942 0 0 1.41942 38.078 -222.495)">
           <circle cx="56.065" cy="203.246" r="7.81" strokeWidth="5" />
           <path
