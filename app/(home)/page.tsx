@@ -1,8 +1,8 @@
 import { CalendarDays, Check, CreditCard, MoveRight, Shield, Star, Users } from "lucide-react"
 import { Metadata } from "next"
-import { Footer } from "@/components/blocks/footer/footer"
-import { Header } from "@/components/blocks/header/header"
-import { Hero5 } from "@/components/blocks/hero/hero-5"
+import { Footer } from "@/components/common/footer/footer"
+import { Header } from "@/components/common/header/header"
+import { Hero5 } from "@/components/common/hero/hero-5"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
@@ -27,23 +27,6 @@ export default function Home() {
     <>
       {/* Sticky Header */}
       <Header />
-      {/* <header className="sticky top-0 z-50 bg-white ">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="text-xl font-bold">BookingApp</div>
-          <nav className="flex space-x-6">
-            <a href="#features" className="text-muted-foreground hover:text-primary">
-              Features
-            </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-primary">
-              Pricing
-            </a>
-            <a href="#cta" className="text-muted-foreground hover:text-primary">
-              Get Started
-            </a>
-          </nav>
-        </div>
-      </header> */}
-
 
       {/* Hero Section */}
       <Hero5 />

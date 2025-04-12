@@ -24,7 +24,7 @@
       "@/constant/*": ["constant/*"],
       "@/context/*": ["context/*"],
       "@/components/*": ["components/*"],
-      "@/features/*": ["features/*"],
+      "@/features/*": ["components/features/*"],
       "@/lib/*": ["lib/*"],
       "@/lib/utils/*": ["lib/utils/*"],
       "@/hooks/*": ["hooks/*"],

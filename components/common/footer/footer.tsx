@@ -1,4 +1,3 @@
-// import Link from 'next/link';
 import LogoSVG from "@/components/svgs/logo"
 
 export const Footer = () => {
@@ -19,11 +18,6 @@ export const Footer = () => {
                 Halaman <span className="font-normal">App</span>
               </p>
             </div>
-            {/* <Link href="/" className="flex items-end">
-              <span className="text-2xl font-bold">Halaman</span>
-              &nbsp;
-              <span className="text-lg">Studio</span>
-            </Link> */}
 
             <p className="mt-2 text-base leading-relaxed text-muted-foreground md:mt-7">
               Agensi digital dengan keahlian desain dan pengembangan

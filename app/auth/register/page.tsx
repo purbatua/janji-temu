@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { z } from 'zod'
 import LogoSVG from "@/components/svgs/logo"
-import { RegistrationForm } from "@/features/auth/registration-form"
+import { RegistrationForm } from "@/components/features/auth/registration-form"
 import { useAppForm } from '@/hooks/use-form'
 import { signUp } from "@/lib/auth-client"
 import BookingAppImg from "@/public/images/booking-app-2.jpg"

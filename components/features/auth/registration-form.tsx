@@ -1,37 +1,17 @@
-// import  from "";
-
-// type Props = {}
-
-// const LoginForm = ({  }: Props) => {
-//   return (
-//     <div>LoginForm</div>
-//   )
-// }
-
-// export default LoginForm;
-
-import Link from "next/link";
-import { z } from 'zod'
-import FieldInfo from "@/components/fields/field-info";
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
+// import { Label } from "@/components/ui/label"
 import { withForm }  from "@/hooks/use-form";
 import { cn } from "@/lib/utils"
 
-// const LoginForm = ({
-//   className,
-//   ...props
-// }: React.ComponentProps<"form">) => {
-  
-//   return 
-  
-export const LoginForm = withForm({
+export const RegistrationForm = withForm({
   defaultValues: {
     email: '',
     password: '',
+    confirm_password: '',
   },
   props: {
-    title: 'Login Form',
+    title: 'Registration Form',
   },
   render: ({ form }) => {
     return (
@@ -44,9 +24,9 @@ export const LoginForm = withForm({
         }}
       >
         <div className="flex flex-col items-center gap-2 text-center">
-          <h1 className="text-2xl font-bold">Login to your account</h1>
+          <h1 className="text-2xl font-bold">Sign up</h1>
           <p className="text-muted-foreground text-sm text-balance">
-            Enter your email below to login to your account
+            Create a free account to get started
           </p>
         </div>
         <div className="grid gap-6">
@@ -61,15 +41,14 @@ export const LoginForm = withForm({
                 </>
               )}
             />
-
           </div>
+
           <div className="grid gap-3">
-  
             <form.AppField
               name="password"
               children={(field) => (
                 <>
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     <Label htmlFor={field.name}>Password</Label>
                     <a
                       href="#"
@@ -77,18 +56,26 @@ export const LoginForm = withForm({
                     >
                       Forgot your password?
                     </a>
-                  </div>
-                  <field.TextField type="password" required />
-                  {/* <FieldInfo field={field} /> */}
+                  </div> */}
+                  <field.TextField label="Password" type="password" placeholder="password" required />
                 </>
               )}
             />
           </div>
+
+          <div className="grid gap-3">
+            <form.AppField
+              name="confirm_password"
+              children={(field) => (
+                <>
+                  <field.TextField label="Password" type="password" placeholder="confirm password" required />
+                </>
+              )}
+            />
+          </div>
+
           <form.AppForm>
-            {/* <form.SubscribeButton type="submit" className="w-full cursor-pointer">
-              Login
-            </form.SubscribeButton> */}
-            <form.SubscribeButton label="Login" />
+            <form.ButtonSubmit label="Sign up" />
           </form.AppForm>
           <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
             <span className="bg-background text-muted-foreground relative z-10 px-2">
@@ -102,13 +89,13 @@ export const LoginForm = withForm({
                 fill="currentColor"
               />
             </svg>
-            Login with GitHub
+            Sign up with GitHub
           </Button>
         </div>
         <div className="text-center text-sm">
-          Don&apos;t have an account?{" "}
-          <Link href="/auth/register" className="underline underline-offset-4">
-            Sign up
+          Already have an account?{" "}
+          <Link href="/auth/login" className="underline underline-offset-4">
+            Sign in
           </Link>
         </div>
       </form>
