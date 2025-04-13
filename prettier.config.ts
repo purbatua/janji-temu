@@ -1,3 +1,6 @@
+// @ts-check
+
+/** @type {import("prettier").Config} */
 module.exports = {
   // plugins: ["prettier-plugin-tailwindcss"],
   // trailingComma: "es5",
@@ -5,8 +8,8 @@ module.exports = {
   // printWidth: 80,
   // semi: false,
   endOfLine: "lf",
-  semi: false,
-  singleQuote: false,
+  semi: true,
+  singleQuote: true,
   tabWidth: 2,
   printWidth: 80,
   trailingComma: "es5",
@@ -38,7 +41,7 @@ module.exports = {
   importOrderMergeDuplicateImports: true,
   importOrderCombineTypeAndValueImports: true,
   plugins: [
-    "@ianvs/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss",
+    "@ianvs/prettier-plugin-sort-imports",
   ],
-}
+};

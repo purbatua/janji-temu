@@ -10,24 +10,24 @@
 //   )
 // }
 
-import type { Metadata, Viewport } from "next"
-import { cookies } from "next/headers"
+import type { Metadata, Viewport } from "next";
+import { cookies } from "next/headers";
 
-import { ActiveThemeProvider } from "@/components/active-theme"
-import { ThemeProvider } from "@/components/theme-provider"
+import { ActiveThemeProvider } from "@/components/active-theme";
+import { ThemeProvider } from "@/components/theme-provider";
 // import { Analytics } from "@/components/analytics"
-import { fontVariables } from "@/constant/fonts"
-import { siteConfig } from "@/constant/site-config"
+import { fontVariables } from "@/constant/fonts";
+import { siteConfig } from "@/constant/site-config";
 // import { Toaster } from "@/registry/new-york-v4/ui/sonner"
 
 // import "./globals.css"
-import "./tailwind.css"
-import { cn } from "@/lib/utils"
+import "../styles/tailwind.css";
+import { cn } from "@/lib/utils";
 
 const META_THEME_COLORS = {
   light: "#ffffff",
   dark: "#09090b",
-}
+};
 
 export const metadata: Metadata = {
   title: {
@@ -79,20 +79,20 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
-}
+};
 
 export const viewport: Viewport = {
   themeColor: META_THEME_COLORS.light,
-}
+};
 
 export default async function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies()
-  const activeThemeValue = cookieStore.get("active_theme")?.value
-  const isScaled = activeThemeValue?.endsWith("-scaled")
+  const cookieStore = await cookies();
+  const activeThemeValue = cookieStore.get("active_theme")?.value;
+  const isScaled = activeThemeValue?.endsWith("-scaled");
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -132,5 +132,5 @@ export default async function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
