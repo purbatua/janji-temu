@@ -1,18 +1,18 @@
-import { cookies } from "next/headers"
+import { cookies } from "next/headers";
 
-import { DashboardHeader } from "@/app/dashboard/components/dashboard-header"
-import { AppSidebar } from "@/app/dashboard/components/dashboard-sidebar"
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
+import { DashboardHeader } from "@/app/dashboard/_components/dashboard-header";
+import { AppSidebar } from "@/app/dashboard/_components/dashboard-sidebar";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
-import "./theme.css"
+import "./theme.css";
 
 export default async function DashboardLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  const cookieStore = await cookies()
-  const defaultOpen = cookieStore.get("sidebar_state")?.value === "true"
+  const cookieStore = await cookies();
+  const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
 
   return (
     <SidebarProvider
@@ -26,8 +26,8 @@ export default async function DashboardLayout({
       <AppSidebar />
       <SidebarInset>
         <DashboardHeader />
-        <div>{children}</div>
+        <>{children}</>
       </SidebarInset>
     </SidebarProvider>
-  )
+  );
 }

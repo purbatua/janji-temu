@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   AudioWaveform,
@@ -12,20 +12,20 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
-} from "lucide-react"
-import * as React from "react"
+} from "lucide-react";
+import * as React from "react";
 
-import { NavMain } from "@/app/dashboard/components/nav-main"
-import { NavProjects } from "@/app/dashboard/components/nav-projects"
-import { NavUser } from "@/app/dashboard/components/nav-user"
-import { TeamSwitcher } from "@/app/dashboard/components/team-switcher"
+import { NavMain } from "@/app/dashboard/_components/nav-main";
+import { NavProjects } from "@/app/dashboard/_components/nav-projects";
+import { NavUser } from "@/app/dashboard/_components/nav-user";
+import { TeamSwitcher } from "@/app/dashboard/_components/team-switcher";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
 // This is sample data.
 const data = {
@@ -63,7 +63,7 @@ const data = {
       title: "Pesanan",
       url: "#",
       icon: SquareTerminal,
-      isActive: false,
+      isActive: true,
       items: [
         {
           title: "Pesanan Saya",
@@ -166,26 +166,9 @@ const data = {
     },
     {
       title: "Settings",
-      url: "#",
+      url: "/dashboard/settings",
       icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      items: [],
     },
   ],
   projects: [
@@ -205,7 +188,7 @@ const data = {
       icon: Map,
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -222,5 +205,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }

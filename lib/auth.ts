@@ -16,7 +16,7 @@
 //   database: prismaAdapter(prisma, {
 //     provider: "postgresql", // or "mysql", "postgresql", ...etc
 //   }),
-//   emailAndPassword: {  
+//   emailAndPassword: {
 //     enabled: true,
 //     autoSignIn: true,
 //   },
@@ -26,14 +26,13 @@
 //       trustedProviders: ["google"]
 //     }
 //   },
-//   // socialProviders: { 
-//   //   google: { 
-//   //     clientId: process.env.GITHUB_CLIENT_ID, 
-//   //     clientSecret: process.env.GITHUB_CLIENT_SECRET, 
-//   //   } 
+//   // socialProviders: {
+//   //   google: {
+//   //     clientId: process.env.GITHUB_CLIENT_ID,
+//   //     clientSecret: process.env.GITHUB_CLIENT_SECRET,
+//   //   }
 //   // },
 // });
-
 
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
@@ -54,22 +53,22 @@ export const auth = betterAuth({
     usePlural: true,
   }),
   trustedOrigins: CORS,
-  emailAndPassword: {  
+  emailAndPassword: {
     enabled: true,
     autoSignIn: true,
   },
   account: {
     accountLinking: {
       enabled: true,
-      trustedProviders: ["google"]
-    }
+      trustedProviders: ["google"],
+    },
   },
-  
-  // socialProviders: { 
-  //   google: { 
-  //     clientId: process.env.GOOGLE_CLIENT_ID, 
-  //     clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
-  //   } 
+
+  // socialProviders: {
+  //   google: {
+  //     clientId: process.env.GOOGLE_CLIENT_ID,
+  //     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  //   }
   // },
   rateLimit: {
     window: 10, // time window in seconds
@@ -77,10 +76,10 @@ export const auth = betterAuth({
   },
   session: {
     expiresIn: 604800, // 7 days
-		updateAge: 86400, // 1 day
+    updateAge: 86400, // 1 day
     cookieCache: {
       enabled: true,
-      maxAge: 24 * 60 * 60, // Cache duration in seconds, 5 * 60 (300s or 5m)
+      maxAge: 5 * 60, // 24 * 60 * 60, // Cache duration in seconds, 5 * 60 (300s or 5m)
     },
   },
   plugins: [nextCookies()],
