@@ -1,12 +1,11 @@
 import type { ComponentProps, ReactNode } from "react";
 import { FieldDescription } from "@/components/fields/field-description";
 import { FieldError } from "@/components/fields/field-error";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
+import { Textarea } from "@/components/ui/textarea";
 import { useFieldContext } from "@/context/form-context";
 
-type Props = ComponentProps<"input"> & {
+type Props = ComponentProps<"textarea"> & {
   label?: string;
   description?: string | ReactNode;
 };
@@ -21,14 +20,14 @@ const TextField = ({ label, description, ...props }: Props) => {
           {label}
         </Label>
       ) : null}
-      <Input
+      <Textarea
         id={field.name}
         name={field.name}
         value={field.state.value}
         onChange={(e) => field.handleChange(e.target.value)}
-        type={props?.type}
         placeholder={props?.placeholder}
         required={props?.required}
+        {...props}
       />
       <FieldError field={field} />
       {description ? <FieldDescription>{description}</FieldDescription> : null}

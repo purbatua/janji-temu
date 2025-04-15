@@ -16,6 +16,7 @@ import { cookies } from "next/headers";
 import { ActiveThemeProvider } from "@/components/active-theme";
 import { ThemeProvider } from "@/components/theme-provider";
 // import { Analytics } from "@/components/analytics"
+import { Toaster } from "@/components/ui/sonner";
 import { fontVariables } from "@/constant/fonts";
 import { siteConfig } from "@/constant/site-config";
 // import { Toaster } from "@/registry/new-york-v4/ui/sonner"
@@ -130,6 +131,8 @@ export default async function RootLayout({
             {/* <Analytics /> */}
           </ActiveThemeProvider>
         </ThemeProvider>
+
+        <Toaster />
       </body>
     </html>
   );
