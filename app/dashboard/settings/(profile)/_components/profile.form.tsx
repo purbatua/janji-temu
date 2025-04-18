@@ -1,8 +1,6 @@
 "use client";
 
-import { toast } from "sonner";
-import { z } from "zod";
-
+import { Trash2 } from "lucide-react";
 import { FieldDescription } from "@/components/fields/field-description";
 import { FieldError } from "@/components/fields/field-error";
 import { Button } from "@/components/ui/button";
@@ -11,49 +9,18 @@ import { Label } from "@/components/ui/label";
 import { withForm } from "@/hooks/use-form";
 import { cn } from "@/lib/utils";
 
-const ProfileFormSchema = z.object({
-  username: z
-    .string()
-    .min(2, {
-      message: "Username must be at least 2 characters.",
-    })
-    .max(30, {
-      message: "Username must not be longer than 30 characters.",
-    }),
-  email: z
-    .string({
-      required_error: "Please select an email to display.",
-    })
-    .email(),
-  bio: z.string().max(160).min(4),
-  urls: z
-    .array(
-      z.object({
-        value: z.string().url({ message: "Please enter a valid URL." }),
-      })
-    )
-    .optional(),
-});
-
 export const ProfileForm = withForm({
-  validators: {
-    // onChange: ProfileFormSchema // TODO: form validation
-  },
   defaultValues: {
     username: "",
     email: "",
     bio: "",
     urls: [{ value: "" }],
   },
-  // props: {
-  //   title: "Profile Form Form",
-  // },
   render: ({ form }) => {
     return (
       <form
         className={cn("flex flex-col gap-6")}
         onSubmit={(e) => {
-          console.log("onSubmit e", e);
           e.preventDefault();
           form.handleSubmit();
         }}
@@ -116,7 +83,7 @@ export const ProfileForm = withForm({
                         name={`urls[${idx}].value`}
                         children={(subField) => {
                           return (
-                            <>
+                            <div className="flex flex-row w-full items-center space-x-2">
                               <subField.TextField
                                 key={idx}
                                 name={`urls[${idx}].value`}
@@ -126,8 +93,18 @@ export const ProfileForm = withForm({
                                   subField.handleChange(e.target.value)
                                 }
                                 placeholder="https://example.com"
+                                className="w-full"
                               />
-                            </>
+                              <Button
+                                type="button"
+                                variant="ghost"
+                                size="sm"
+                                className="w-12 text-red-500"
+                                onClick={() => field.removeValue(idx)}
+                              >
+                                <Trash2 />
+                              </Button>
+                            </div>
                           );
                         }}
                       />
@@ -157,7 +134,7 @@ export const ProfileForm = withForm({
           </form.AppForm>
         </div>
 
-        <pre>{JSON.stringify(form.state.values, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(form.state.values, null, 2)}</pre> */}
       </form>
     );
   },
